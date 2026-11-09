@@ -7,9 +7,10 @@ import net.minecraft.src.StringTranslate;
 import nilloader.api.NilMetadata;
 
 public class GuiModList extends GuiScreen {
-    public GuiScreen parentScreen;
+
+    public final GuiScreen parentScreen;
     public GuiModListContent modListContent;
-    
+
     public GuiModList(GuiScreen var1) {
         this.parentScreen = var1;
     }
@@ -33,7 +34,8 @@ public class GuiModList extends GuiScreen {
         this.drawString(this.fontRenderer, "Mod ID: " + mod.id, this.width - (this.width / 3) + 4, 68, 16777215);
         this.drawString(this.fontRenderer, "Author: " + mod.authors, this.width - (this.width / 3) + 4, 86, 16777215);
         this.drawString(this.fontRenderer, "Version: " + mod.version, this.width - (this.width / 3) + 4, 104, 16777215);
-        this.fontRenderer.drawSplitString("Description: " + mod.description, this.width - (this.width / 3) + 4, 122, (this.width / 3), 16777215);
+        this.fontRenderer.drawSplitString("Description: " + mod.description, this.width - (this.width / 3) + 4,
+                122, (this.width / 3), 16777215);
 
         super.drawScreen(var1, var2, var3);
     }
@@ -42,12 +44,13 @@ public class GuiModList extends GuiScreen {
     public void actionPerformed(GuiButton var1) {
         if (var1.enabled) {
             switch (var1.id) {
-                case 0:
-                    this.mc.displayGuiScreen(this.parentScreen);
-                    break;
-                default:
-                    break;
+            case 0:
+                this.mc.displayGuiScreen(this.parentScreen);
+                break;
+            default:
+                break;
             }
         }
     }
+
 }

@@ -1,16 +1,15 @@
 package net.scoobis.nilmenu;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import net.minecraft.src.GuiSlot;
 import net.minecraft.src.Tessellator;
 import nilloader.api.NilMetadata;
 import nilloader.api.NilModList;
 
 public class GuiModListContent extends GuiSlot {
-    public List<NilMetadata> modList = new ArrayList<>();
-    private GuiModList parent;
+
+    private final GuiModList parent;
+    public final List<NilMetadata> modList;
     public int currentIndex;
 
     public GuiModListContent(GuiModList parent) {
@@ -51,4 +50,5 @@ public class GuiModListContent extends GuiSlot {
         String modName = mod.name;
         this.parent.drawCenteredString(this.parent.fontRenderer, modName, this.width / 2, arg2 + 1, 16777215);
     }
+
 }

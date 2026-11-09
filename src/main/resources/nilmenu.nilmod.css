@@ -1,5 +1,4 @@
 @nilmod {
-	/* There is no id field. The filename defines the id of the mod. */
 	name: "NilMenu";
 	description: "A basic mod menu for NilLoader";
 	authors: "GetCmdRolled";
@@ -7,6 +6,6 @@
 }
 
 entrypoints {
-	/* premain is the only entrypoint defined by NilLoader itself. */
 	premain: "net.scoobis.nilmenu.NilMenuPremain";
+	hijack: "net.scoobis.nilmenu.NilMenuPremain";
 }
